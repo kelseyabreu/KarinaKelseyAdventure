@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karina & Kelsey's Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="ui-overlay">
+            <div id="score">Score: <span id="score-value">0</span></div>
+            <div id="level-indicator">Level: <span id="level-value">1</span></div> <!-- Added Level Indicator -->
+            <div id="health">
+                <div class="character-health">
+                    <span class="character-name">Karina</span>
+                    <div class="health-bar">
+                        <div id="karina-health" class="health-fill"></div>
+                    </div>
+                </div>
+                <div class="character-health">
+                    <span class="character-name">Kelsey</span>
+                    <div class="health-bar">
+                        <div id="kelsey-health" class="health-fill"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="controls-info">
+                <p>WASD/Arrows: Move | Space: Jump | Q: Switch Character</p>
+                <p>Mouse Drag: Pan Camera</p> <!-- Added Panning Info -->
+            </div>
+        </div>
+        <div id="loading-screen" class="screen-overlay"> <!-- Added class -->
+            <h1>Karina & Kelsey's Adventure</h1>
+            <div class="progress-container">
+                <div id="loading-progress"></div>
+            </div>
+            <p id="loading-text">Loading...</p>
+        </div>
+        <div id="start-screen" class="screen-overlay"> <!-- Added class -->
+            <h1>Karina & Kelsey's Adventure</h1>
+            <p>Help Karina and Kelsey navigate through the mysterious world and collect all the crystals!</p>
+            <p>Karina (Pink) can jump higher. Kelsey (Blue) can move faster.</p>
+            <p>Collect all crystals to advance to the next level.</p>
+            <button id="start-button">Start Game</button>
+        </div>
+        <!-- Added Game Over Screen -->
+        <div id="game-over-screen" class="screen-overlay">
+            <h1>Game Over!</h1>
+            <p>Your final score: <span id="final-score">0</span></p>
+            <button id="restart-button">Restart Game</button>
+        </div>
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

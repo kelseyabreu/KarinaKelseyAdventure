@@ -870,6 +870,34 @@ function updateCharacterMovement(delta) {
      }
  }
  
+ let minZoomDistance = 1;
+let maxZoomDistance = 2000;
+let currentZoom = 12; // Starting zoom level (same as initial cameraOffset.z)
+
+// Add this event listener after the other camera event listeners
+window.addEventListener('wheel', handleMouseWheel);
+
+// Add this function to handle zoom
+function handleMouseWheel(event) {
+    if (!isGameStarted || isGameOver) return;
+    
+    // Determine scroll direction
+    const scrollDirection = Math.sign(event.deltaY);
+    
+    // Adjust zoom level
+    currentZoom += scrollDirection * 0.8;
+    
+    // Clamp zoom to min/max values
+    currentZoom = Math.max(minZoomDistance, Math.min(maxZoomDistance, currentZoom));
+    
+    // Update camera offset z component (distance from character)
+    cameraOffset.z = currentZoom;
+    
+    // Update camera position immediately
+    updateCameraPosition();
+}
+
+ 
  function handleGameOver() {
     if (isGameOver) return; // Prevent multiple triggers
     console.log("Game Over!");

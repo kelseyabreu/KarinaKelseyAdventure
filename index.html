@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-		<div id="message-container"></div>
+    <div id="message-container"></div>
     <div id="game-container">
         <div id="ui-overlay">
             <div id="score">Score: <span id="score-value">0</span></div>
@@ -28,7 +28,7 @@
             </div>
             <div id="controls-info">
                 <p>WASD/Arrows: Move | Space: Jump | Q: Switch Character</p>
-                <p>Mouse Drag: Pan Camera</p> <!-- Added Panning Info -->
+                <p>Mouse Drag: Pan Camera | E: Character Special Ability</p>
             </div>
         </div>
         <div id="loading-screen" class="screen-overlay"> <!-- Added class -->
@@ -52,13 +52,12 @@
             <button id="restart-button">Restart Game</button>
         </div>
         <canvas id="game-canvas"></canvas>
-
-
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="game.js"></script>
-<script src="game-enhancements.js"></script>
-<script src="additional-enhancements.js"></script>
+    <script src="game.js"></script>
+    <script src="game-enhancements.js"></script>
+    <script src="additional-enhancements.js"></script>
+    <script src="character-model-switcher.js"></script>
 </body>
 </html>

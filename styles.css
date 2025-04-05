@@ -23,6 +23,55 @@ body {
     cursor: grab; /* Indicate panning is possible */
 }
 
+/* Add these styles to your existing styles.css file */
+
+#model-switch-button {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    padding: 8px 16px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 15;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#model-switch-button:hover {
+    background-color: #ff5ba7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#model-switch-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#model-switch-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Animation for model transition */
+@keyframes modelTransition {
+    0% { opacity: 0.5; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.model-transition {
+    animation: modelTransition 0.5s ease-out;
+}
+
 #game-canvas.panning {
     cursor: grabbing; /* Indicate panning is active */
 }

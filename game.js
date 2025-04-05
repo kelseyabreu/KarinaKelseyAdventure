@@ -283,6 +283,7 @@ function startGame() {
 }
 
 // Load a specific level
+// Load a specific level
 function loadLevel(levelIndex) {
     return new Promise((resolve) => {
         console.log(`Loading Level ${levelIndex + 1}`);
@@ -563,6 +564,7 @@ function isOnPlatform(character) {
 }
 
 // Check for crystal collision
+// Check for crystal collision
 function checkCrystalCollision() {
     if (!activeCharacter) return;
     const characterBox = new THREE.Box3().setFromObject(activeCharacter);
@@ -583,14 +585,14 @@ function checkCrystalCollision() {
             updateHealthBars();
 
             // Check for level completion
-			if (crystals.length === 0) {
-				currentLevelIndex++;
-				if (currentLevelIndex < levels.length) {
-					transitionToNextLevel();
-				} else {
-					showWinScreen();
-				}
-			}
+            if (crystals.length === 0) {
+                currentLevelIndex++;
+                if (currentLevelIndex < levels.length) {
+                    transitionToNextLevel();
+                } else {
+                    showWinScreen();
+                }
+            }
         }
     }
 }
@@ -741,6 +743,7 @@ function updateCrystalAnimation() {
 }
 
 // Character movement/physics logic
+// Character movement/physics logic
 function updateCharacterMovement(delta) {
      if (!activeCharacter) {
          console.warn("updateCharacterMovement: activeCharacter is not defined");
@@ -756,7 +759,7 @@ function updateCharacterMovement(delta) {
      camera.getWorldDirection(cameraDirection);
      cameraDirection.y = 0;
      cameraDirection.normalize();
-	const cameraRight = new THREE.Vector3().crossVectors(camera.up, cameraDirection).normalize().multiplyScalar(-1);
+     const cameraRight = new THREE.Vector3().crossVectors(camera.up, cameraDirection).normalize().multiplyScalar(-1);
 
      // Input Handling
      if (keys['w'] || keys['arrowup']) {
